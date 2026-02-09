@@ -29,7 +29,7 @@ const Projects = () => {
     {
       title: "Peoples' Health care",
       description: 'Coming Soon...',
-      image: "public/Peoples' Health Care.jpg",
+      image: "Peoples' Health Care.jpg",
       technologies: ['Python', 'Google Colab Notebook','Jupyter','scikit-learn','CNN','MongoDB','Express.js','React','Node.js'],
       github: 'https://github.com/Hasanga910/People-s-Health-Care.git',
       live: 'https://demo-ecommerce.com',
