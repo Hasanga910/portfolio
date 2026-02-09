@@ -39,7 +39,7 @@ const Projects = () => {
     {
       title: 'Flightify AI/ML - Airline Passenger Satisfaction Prediction',
       description: 'AI/ML system that predicts passenger satisfaction based on airline service factors, helping airlines improve service quality and enabling passengers to choose higher-rated airlines.',
-      image: 'public/Flightify.jpg',
+      image: 'Flightify.jpg',
       technologies: ['Python', 'Google Colab Notebook','Jupyter','scikit-learn'],
       github: 'https://github.com/Hasanga910/Flightify.git',
       live: 'https://demo-ecommerce.com',
