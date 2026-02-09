@@ -2,11 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @layer base {
   body {
-    @apply bg-light-bg dark:bg-dark-bg text-light-text dark:text-white font-inter transition-colors duration-300;
+    @apply bg-dark-bg text-white font-inter;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Light mode support */
+  body.light {
+    background-color: #FFFFFF;
+    color: #111827;
   }
 }
 
@@ -16,21 +24,176 @@
   }
   
   .card {
-    @apply bg-light-surface dark:bg-dark-surface rounded-xl p-6 border border-light-border dark:border-dark-border transition-all duration-300 hover:border-accent-green/30;
+    @apply bg-dark-surface rounded-xl p-6 border border-dark-border transition-all duration-300 hover:border-accent-green/30;
+  }
+
+  body.light .card {
+    background-color: #F8FAFC;
+    border-color: #E5E7EB;
+  }
+
+  body.light .card:hover {
+    border-color: #9CA3AF;
   }
   
   .btn-primary {
-    @apply px-6 py-3 bg-light-text dark:bg-white text-white dark:text-dark-bg rounded-lg font-medium transition-all duration-300 hover:bg-light-text/90 dark:hover:bg-gray-100;
+    @apply px-6 py-3 bg-white text-dark-bg rounded-lg font-medium transition-all duration-300 hover:bg-gray-100;
+  }
+
+  body.light .btn-primary {
+    background-color: #111827;
+    color: #FFFFFF;
+  }
+
+  body.light .btn-primary:hover {
+    background-color: #1F2937;
   }
   
   .btn-secondary {
-    @apply px-6 py-3 bg-light-surface dark:bg-dark-surface text-light-text dark:text-white border border-light-border dark:border-dark-border rounded-lg font-medium transition-all duration-300 hover:border-light-text dark:hover:border-white;
+    @apply px-6 py-3 bg-dark-surface text-white border border-dark-border rounded-lg font-medium transition-all duration-300 hover:border-white;
+  }
+
+  body.light .btn-secondary {
+    background-color: #F8FAFC;
+    border-color: #E5E7EB;
+    color: #111827;
+  }
+
+  body.light .btn-secondary:hover {
+    border-color: #9CA3AF;
   }
 
   .status-badge {
-    @apply inline-flex items-center gap-2 px-3 py-1.5 bg-light-surface dark:bg-dark-surface border border-light-border dark:border-dark-border rounded-full text-sm;
+    @apply inline-flex items-center gap-2 px-3 py-1.5 bg-dark-surface border border-dark-border rounded-full text-sm;
+  }
+
+  body.light .status-badge {
+    background-color: #F8FAFC;
+    border-color: #E5E7EB;
   }
 }
+
+/* Light mode text color fixes */
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light h5,
+body.light h6 {
+  color: #111827;
+}
+
+body.light p,
+body.light span,
+body.light div {
+  color: inherit;
+}
+
+body.light .text-white {
+  color: #111827;
+}
+
+body.light .text-light-gray {
+  color: #6B7280;
+}
+
+body.light .text-dark-gray {
+  color: #9CA3AF;
+}
+
+body.light .bg-dark-bg {
+  background-color: #FFFFFF;
+}
+
+body.light .bg-dark-surface {
+  background-color: #F8FAFC;
+}
+
+body.light .border-dark-border {
+  border-color: #E5E7EB;
+}
+
+/* Animated Background Dots */
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.dot {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  will-change: transform;
+}
+
+body.light .dot {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.dot.small {
+  width: 4px;
+  height: 4px;
+}
+
+.dot.medium {
+  width: 6px;
+  height: 6px;
+}
+
+.dot.large {
+  width: 8px;
+  height: 8px;
+}
+
+/* Dot animations - slow and professional */
+@keyframes float-around-1 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(100px, -80px); }
+  50% { transform: translate(-60px, 120px); }
+  75% { transform: translate(140px, 60px); }
+}
+
+@keyframes float-around-2 {
+  0%, 100% { transform: translate(0, 0); }
+  33% { transform: translate(-120px, 90px); }
+  66% { transform: translate(80px, -100px); }
+}
+
+@keyframes float-around-3 {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(90px, 110px); }
+  40% { transform: translate(-70px, -60px); }
+  60% { transform: translate(130px, -90px); }
+  80% { transform: translate(-110px, 70px); }
+}
+
+@keyframes float-around-4 {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-150px, -120px); }
+}
+
+@keyframes float-around-5 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-80px, 100px); }
+  50% { transform: translate(110px, -70px); }
+  75% { transform: translate(-90px, -110px); }
+}
+
+.dot:nth-child(5n+1) { animation: float-around-1 28s infinite ease-in-out; }
+.dot:nth-child(5n+2) { animation: float-around-2 32s infinite ease-in-out; }
+.dot:nth-child(5n+3) { animation: float-around-3 36s infinite ease-in-out; }
+.dot:nth-child(5n+4) { animation: float-around-4 30s infinite ease-in-out; }
+.dot:nth-child(5n+5) { animation: float-around-5 34s infinite ease-in-out; }
+
+.dot:nth-child(odd) { animation-delay: -5s; }
+.dot:nth-child(3n) { animation-delay: -10s; }
+.dot:nth-child(4n) { animation-delay: -15s; }
 
 /* Custom animations */
 @keyframes fadeInUp {
@@ -62,6 +225,15 @@
   }
 }
 
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
 .fade-in-up {
   animation: fadeInUp 0.6s ease-out forwards;
 }
@@ -74,20 +246,36 @@
   animation: float 3s ease-in-out infinite;
 }
 
+.animate-pulse-slow {
+  animation: pulse-slow 2s ease-in-out infinite;
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-light-bg dark:bg-dark-bg;
+  background: #0A0A0A;
+}
+
+body.light ::-webkit-scrollbar-track {
+  background: #F8FAFC;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-light-border dark:bg-dark-border;
+  background: #333;
   border-radius: 4px;
 }
 
+body.light ::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+}
+
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-light-text-secondary dark:bg-light-gray;
+  background: #444;
+}
+
+body.light ::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
 }
