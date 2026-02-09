@@ -16,7 +16,6 @@ const Skills = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Set visibility based on whether element is intersecting
         setIsVisible(entry.isIntersecting);
       },
       { threshold: 0.1 }
@@ -68,18 +67,18 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" ref={sectionRef} className="section-container">
+    <section id="skills" ref={sectionRef} className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
         {/* Section Title */}
         <h2 
-          className={`text-4xl md:text-5xl font-bold text-white dark:text-white text-center mb-4 transition-all duration-1000 ${
+          className={`text-3xl sm:text-4xl md:text-5xl font-bold text-white dark:text-white text-center mb-3 sm:mb-4 transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           Skills & Expertise
         </h2>
         <p 
-          className={`text-center text-dark-gray dark:text-dark-gray mb-16 transition-all duration-1000 delay-100 ${
+          className={`text-center text-dark-gray dark:text-dark-gray mb-12 sm:mb-16 px-4 transition-all duration-1000 delay-100 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -87,7 +86,7 @@ const Skills = () => {
         </p>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={category.title}
@@ -96,7 +95,7 @@ const Skills = () => {
               }`}
               style={{ transitionDelay: `${categoryIndex * 100 + 200}ms` }}
             >
-              <h3 className="text-xl font-semibold text-white dark:text-white mb-6 flex items-center gap-2">
+              <h3 className="text-lg sm:text-xl font-semibold text-white dark:text-white mb-6 flex items-center gap-2">
                 <span className="w-1 h-6 bg-white dark:bg-white rounded"></span>
                 {category.title}
               </h3>
@@ -106,8 +105,8 @@ const Skills = () => {
                   <div key={skill.name} className="space-y-2">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <span className="text-xl text-light-gray dark:text-light-gray">{skill.icon}</span>
-                        <span className="text-sm font-medium text-light-gray dark:text-light-gray">{skill.name}</span>
+                        <span className="text-lg sm:text-xl text-light-gray dark:text-light-gray">{skill.icon}</span>
+                        <span className="text-xs sm:text-sm font-medium text-light-gray dark:text-light-gray">{skill.name}</span>
                       </div>
                       <span className="text-xs text-dark-gray dark:text-dark-gray">{skill.level}%</span>
                     </div>
@@ -129,11 +128,11 @@ const Skills = () => {
 
         {/* Additional Info */}
         <div 
-          className={`mt-12 text-center transition-all duration-1000 delay-700 ${
+          className={`mt-8 sm:mt-12 text-center transition-all duration-1000 delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
-          <p className="text-dark-gray dark:text-dark-gray text-sm">
+          <p className="text-dark-gray dark:text-dark-gray text-xs sm:text-sm px-4">
             Always learning and expanding my skillset with new technologies
           </p>
         </div>

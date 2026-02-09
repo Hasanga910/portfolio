@@ -14,7 +14,6 @@ const Contact = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Set visibility based on whether element is intersecting
         setIsVisible(entry.isIntersecting);
       },
       { threshold: 0.1 }
@@ -90,34 +89,34 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" ref={sectionRef} className="section-container">
+    <section id="contact" ref={sectionRef} className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
         {/* Section Title */}
         <h2 
-          className={`text-4xl md:text-5xl font-bold text-white dark:text-white text-center mb-4 transition-all duration-1000 ${
+          className={`text-3xl sm:text-4xl md:text-5xl font-bold text-white dark:text-white text-center mb-3 sm:mb-4 transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           Get In Touch
         </h2>
         <p 
-          className={`text-center text-dark-gray dark:text-dark-gray mb-16 transition-all duration-1000 delay-100 ${
+          className={`text-center text-dark-gray dark:text-dark-gray mb-12 sm:mb-16 px-4 transition-all duration-1000 delay-100 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           Have a project in mind? Let's work together
         </p>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12">
           {/* Contact Form */}
           <div
             className={`transition-all duration-1000 delay-200 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div>
-                <label htmlFor="name" className="block text-light-gray dark:text-light-gray text-sm font-medium mb-2">
+                <label htmlFor="name" className="block text-light-gray dark:text-light-gray text-xs sm:text-sm font-medium mb-2">
                   Your Name
                 </label>
                 <input
@@ -127,13 +126,13 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-dark-surface dark:bg-dark-surface border border-dark-border dark:border-dark-border rounded-lg text-white dark:text-white focus:outline-none focus:border-white dark:focus:border-white transition-colors"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-dark-surface dark:bg-dark-surface border border-dark-border dark:border-dark-border rounded-lg text-white dark:text-white text-sm sm:text-base focus:outline-none focus:border-white dark:focus:border-white transition-colors"
                   placeholder="Enter your name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-light-gray dark:text-light-gray text-sm font-medium mb-2">
+                <label htmlFor="email" className="block text-light-gray dark:text-light-gray text-xs sm:text-sm font-medium mb-2">
                   Email Address
                 </label>
                 <input
@@ -143,13 +142,13 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-dark-surface dark:bg-dark-surface border border-dark-border dark:border-dark-border rounded-lg text-white dark:text-white focus:outline-none focus:border-white dark:focus:border-white transition-colors"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-dark-surface dark:bg-dark-surface border border-dark-border dark:border-dark-border rounded-lg text-white dark:text-white text-sm sm:text-base focus:outline-none focus:border-white dark:focus:border-white transition-colors"
                   placeholder="Enter your email"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-light-gray dark:text-light-gray text-sm font-medium mb-2">
+                <label htmlFor="message" className="block text-light-gray dark:text-light-gray text-xs sm:text-sm font-medium mb-2">
                   Message
                 </label>
                 <textarea
@@ -159,14 +158,14 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full px-4 py-3 bg-dark-surface dark:bg-dark-surface border border-dark-border dark:border-dark-border rounded-lg text-white dark:text-white focus:outline-none focus:border-white dark:focus:border-white transition-colors resize-none"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-dark-surface dark:bg-dark-surface border border-dark-border dark:border-dark-border rounded-lg text-white dark:text-white text-sm sm:text-base focus:outline-none focus:border-white dark:focus:border-white transition-colors resize-none"
                   placeholder="Tell me about your project..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full btn-primary"
+                className="w-full btn-primary text-sm sm:text-base"
               >
                 Send Message
               </button>
@@ -181,8 +180,8 @@ const Contact = () => {
           >
             <div className="space-y-6">
               <div>
-                <h3 className="text-2xl font-bold text-white dark:text-white mb-4">Let's Connect</h3>
-                <p className="text-light-gray dark:text-light-gray leading-relaxed">
+                <h3 className="text-xl sm:text-2xl font-bold text-white dark:text-white mb-4">Let's Connect</h3>
+                <p className="text-sm sm:text-base text-light-gray dark:text-light-gray leading-relaxed">
                   I'm always interested in hearing about new projects and opportunities. 
                   Whether you have a question or just want to say hi, feel free to reach out!
                 </p>
@@ -195,14 +194,14 @@ const Contact = () => {
                     href={info.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 bg-dark-surface dark:bg-dark-surface border border-dark-border dark:border-dark-border rounded-lg hover:border-white dark:hover:border-white transition-all duration-300 group"
+                    className="flex items-center gap-3 sm:gap-4 p-3 sm:p-4 bg-dark-surface dark:bg-dark-surface border border-dark-border dark:border-dark-border rounded-lg hover:border-white dark:hover:border-white transition-all duration-300 group"
                   >
-                    <div className="text-2xl text-light-gray dark:text-light-gray group-hover:text-white dark:group-hover:text-white transition-colors">
+                    <div className="text-xl sm:text-2xl text-light-gray dark:text-light-gray group-hover:text-white dark:group-hover:text-white transition-colors">
                       {info.icon}
                     </div>
-                    <div>
-                      <p className="text-sm text-dark-gray dark:text-dark-gray">{info.label}</p>
-                      <p className="text-light-gray dark:text-light-gray group-hover:text-white dark:group-hover:text-white transition-colors">
+                    <div className="min-w-0 flex-1">
+                      <p className="text-xs sm:text-sm text-dark-gray dark:text-dark-gray">{info.label}</p>
+                      <p className="text-xs sm:text-base text-light-gray dark:text-light-gray group-hover:text-white dark:group-hover:text-white transition-colors truncate">
                         {info.value}
                       </p>
                     </div>
@@ -211,15 +210,15 @@ const Contact = () => {
               </div>
 
               <div className="pt-6">
-                <div className="p-6 bg-dark-surface dark:bg-dark-surface border border-dark-border dark:border-dark-border rounded-lg">
+                <div className="p-4 sm:p-6 bg-dark-surface dark:bg-dark-surface border border-dark-border dark:border-dark-border rounded-lg">
                   <div className="flex items-center gap-2 mb-2">
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-green opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-green"></span>
                     </span>
-                    <span className="text-light-gray dark:text-light-gray font-medium">Available for Work</span>
+                    <span className="text-sm sm:text-base text-light-gray dark:text-light-gray font-medium">Available for Work</span>
                   </div>
-                  <p className="text-sm text-dark-gray dark:text-dark-gray">
+                  <p className="text-xs sm:text-sm text-dark-gray dark:text-dark-gray">
                     Open to internship and full-time opportunities
                   </p>
                 </div>

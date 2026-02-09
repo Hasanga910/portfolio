@@ -8,7 +8,6 @@ const Projects = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Set visibility based on whether element is intersecting
         setIsVisible(entry.isIntersecting);
       },
       { threshold: 0.1 }
@@ -69,18 +68,18 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" ref={sectionRef} className="section-container">
+    <section id="projects" ref={sectionRef} className="py-12 sm:py-16 md:py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         {/* Section Title */}
         <h2 
-          className={`text-4xl md:text-5xl font-bold text-white dark:text-white text-center mb-4 transition-all duration-1000 ${
+          className={`text-3xl sm:text-4xl md:text-5xl font-bold text-white dark:text-white text-center mb-3 sm:mb-4 transition-all duration-1000 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           Featured Projects
         </h2>
         <p 
-          className={`text-center text-dark-gray dark:text-dark-gray mb-16 transition-all duration-1000 delay-100 ${
+          className={`text-center text-dark-gray dark:text-dark-gray mb-12 sm:mb-16 px-4 transition-all duration-1000 delay-100 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -88,7 +87,7 @@ const Projects = () => {
         </p>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -98,19 +97,19 @@ const Projects = () => {
               style={{ transitionDelay: `${index * 100 + 200}ms` }}
             >
               {/* Project Image */}
-              <div className="relative overflow-hidden rounded-lg mb-4 h-48 bg-dark-bg dark:bg-dark-bg">
+              <div className="relative overflow-hidden rounded-lg mb-4 h-40 sm:h-48 bg-dark-bg dark:bg-dark-bg">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 {project.featured && (
-                  <span className="absolute top-4 right-4 px-3 py-1 bg-white text-dark-bg text-xs font-semibold rounded-full">
+                  <span className="absolute top-3 sm:top-4 right-3 sm:right-4 px-2 sm:px-3 py-1 bg-white text-dark-bg text-xs font-semibold rounded-full">
                     Featured
                   </span>
                 )}
                 {project.upcoming && (
-                  <span className="absolute top-4 right-4 px-3 py-1 bg-accent-green text-dark-bg text-xs font-semibold rounded-full">
+                  <span className="absolute top-3 sm:top-4 right-3 sm:right-4 px-2 sm:px-3 py-1 bg-accent-green text-dark-bg text-xs font-semibold rounded-full">
                     Upcoming
                   </span>
                 )}
@@ -118,10 +117,10 @@ const Projects = () => {
 
               {/* Project Info */}
               <div className="space-y-4">
-                <h3 className="text-xl font-bold text-white dark:text-white group-hover:text-white transition-colors">
+                <h3 className="text-lg sm:text-xl font-bold text-white dark:text-white group-hover:text-white transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-light-gray dark:text-light-gray text-sm leading-relaxed">
+                <p className="text-light-gray dark:text-light-gray text-xs sm:text-sm leading-relaxed">
                   {project.description}
                 </p>
 
@@ -130,7 +129,7 @@ const Projects = () => {
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-dark-bg dark:bg-dark-bg border border-dark-border dark:border-dark-border rounded-full text-xs text-light-gray dark:text-light-gray"
+                      className="px-2 sm:px-3 py-1 bg-dark-bg dark:bg-dark-bg border border-dark-border dark:border-dark-border rounded-full text-xs text-light-gray dark:text-light-gray"
                     >
                       {tech}
                     </span>
@@ -145,8 +144,8 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-light-gray dark:text-light-gray hover:text-white dark:hover:text-white transition-colors"
                   >
-                    <FaGithub className="text-lg" />
-                    <span className="text-sm">Code</span>
+                    <FaGithub className="text-base sm:text-lg" />
+                    <span className="text-xs sm:text-sm">Code</span>
                   </a>
                   <a
                     href={project.live}
@@ -155,7 +154,7 @@ const Projects = () => {
                     className="flex items-center gap-2 text-light-gray dark:text-light-gray hover:text-white dark:hover:text-white transition-colors"
                   >
                     <FaExternalLinkAlt className="text-sm" />
-                    <span className="text-sm">Live Demo</span>
+                    <span className="text-xs sm:text-sm">Live Demo</span>
                   </a>
                 </div>
               </div>
@@ -165,7 +164,7 @@ const Projects = () => {
 
         {/* View More with Blinking Animation */}
         <div 
-          className={`text-center mt-12 transition-all duration-1000 delay-700 ${
+          className={`text-center mt-8 sm:mt-12 transition-all duration-1000 delay-700 ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
@@ -173,7 +172,7 @@ const Projects = () => {
             href="https://github.com/Hasanga910"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-light-gray dark:text-light-gray hover:text-white dark:hover:text-white transition-colors animate-pulse-slow"
+            className="inline-flex items-center gap-2 text-light-gray dark:text-light-gray hover:text-white dark:hover:text-white transition-colors animate-pulse-slow text-sm sm:text-base"
           >
             <span>View more projects on GitHub</span>
             <FaExternalLinkAlt className="text-sm" />
