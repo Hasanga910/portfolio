@@ -29,7 +29,7 @@ const Projects = () => {
     {
       title: "Peoples' Health care",
       description: 'Coming Soon...',
-      image: "src/{components,assets}/Peoples' Health Care.jpg",
+      image: "public/Peoples' Health Care.jpg",
       technologies: ['Python', 'Google Colab Notebook','Jupyter','scikit-learn','CNN','MongoDB','Express.js','React','Node.js'],
       github: 'https://github.com/Hasanga910/People-s-Health-Care.git',
       live: 'https://demo-ecommerce.com',
@@ -39,7 +39,7 @@ const Projects = () => {
     {
       title: 'Flightify AI/ML - Airline Passenger Satisfaction Prediction',
       description: 'AI/ML system that predicts passenger satisfaction based on airline service factors, helping airlines improve service quality and enabling passengers to choose higher-rated airlines.',
-      image: 'src/{components,assets}/Flightify.jpg',
+      image: 'public/Flightify.jpg',
       technologies: ['Python', 'Google Colab Notebook','Jupyter','scikit-learn'],
       github: 'https://github.com/Hasanga910/Flightify.git',
       live: 'https://demo-ecommerce.com',
@@ -49,7 +49,7 @@ const Projects = () => {
     {
       title: 'Hireza - Web Based Recruitment System',
       description: 'End-to-end online recruitment platform featuring role-based portals for stakeholders. The system streamlines job posting, candidate search, application tracking, and career guidance.',
-      image: 'src/{components,assets}/Hireza.webp',
+      image: 'public/Hireza.webp',
       technologies: ['Java', 'MS SQL Server', 'Docker', 'JSP','Servlets', 'Apache Tomcat', 'MVC', 'HTML/CSS'],
       github: 'https://github.com/Hasanga910/HireZa.git',
       live: 'https://demo-taskmanager.com',
@@ -59,7 +59,7 @@ const Projects = () => {
     {
       title: 'ApolloCabs Taxi Booking Platform',
       description: 'Comprehensive online taxi booking platform built with Java OOP principles, featuring multi-portal system for passengers, drivers, and admins with real-time booking capabilities.',
-      image: 'src/{components,assets}/Apollocabs.jpg',
+      image: 'public/Apollocabs.jpg',
       technologies: ['Java 17', 'JSP', 'Servlets','Apache Tomcat','MVC','HTML/CSS'],
       github: 'https://github.com/Hasanga910/ApolloCabs.git',
       live: 'https://demo-weather.com',
