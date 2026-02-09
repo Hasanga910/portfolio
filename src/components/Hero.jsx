@@ -107,7 +107,7 @@ const Hero = () => {
               {/* Profile Image Container */}
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full overflow-hidden bg-gradient-to-br from-dark-surface to-dark-bg dark:from-dark-surface dark:to-dark-bg light:from-light-surface light:to-white border border-dark-border dark:border-dark-border light:border-light-border">
                 <img
-                  src="public/IMG_2764.jpg"
+                  src="IMG_2764.jpg"
                   alt="Sajana Hasanga"
                   className="w-full h-full object-cover"
                   onError={(e) => {
