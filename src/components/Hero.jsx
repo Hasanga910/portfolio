@@ -107,11 +107,11 @@ const Hero = () => {
               {/* Profile Image Container */}
               <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden bg-gradient-to-br from-dark-surface to-dark-bg dark:from-dark-surface dark:to-dark-bg light:from-light-surface light:to-white border border-dark-border dark:border-dark-border light:border-light-border">
                 <img
-                  src="src/{components,assets}/IMG_2764.jpg"
-                  alt="John Developer"
+                  src="public/IMG_2764.jpg"
+                  alt="Sajana Hasanga"
                   className="w-full h-full object-cover"
                   onError={(e) => {
-                    e.target.src = 'https://ui-avatars.com/api/?name=John+Developer&size=400&background=111111&color=ffffff';
+                    e.target.src = 'https://ui-avatars.com/api/?name=Hasanga&size=400&background=111111&color=ffffff';
                   }}
                 />
               </div>
