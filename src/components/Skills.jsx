@@ -6,7 +6,8 @@ import {
 import { 
   SiJavascript, SiTypescript, SiMongodb, SiCplusplus,SiPostgresql, 
   SiRedis, SiKubernetes, SiTailwindcss, SiNextdotjs, 
-  SiMicrosoftsqlserver
+  SiMicrosoftsqlserver,
+  SiC
 } from 'react-icons/si';
 
 const Skills = () => {
@@ -46,7 +47,8 @@ const Skills = () => {
       skills: [
         { name: 'Java', icon: <FaJava />, level: 90 },
         { name: 'Python', icon: <FaPython />, level: 85 },
-        { name: 'C++', icon: <SiCplusplus />, level: 75 },
+        { name: 'C++', icon: <SiCplusplus />, level: 70 },
+        { name: 'C', icon: <SiC />, level: 60 },
       ],
     },
     {

@@ -29,7 +29,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 mb-6 sm:mb-8">
           {/* Logo / Brand */}
           <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-            <img src="/favicon.png" alt="SH Logo" className="w-10 h-10 sm:w-12 sm:h-12 mb-2" />
+            <img src="/footer_logo.png" alt="SH Logo" className="w-10 h-10 sm:w-12 sm:h-12 mb-2" />
             <h3 className="text-lg sm:text-xl font-bold text-white dark:text-white light:text-light-text">
               Sajana Hasanga
             </h3>
