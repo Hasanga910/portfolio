@@ -61,7 +61,7 @@ const Skills = () => {
       skills: [
         { name: 'Docker', icon: <FaDocker />, level: 86 },
         { name: 'AWS', icon: <FaAws />, level: 84 },
-        { name: 'Git', icon: <FaGitAlt />, level: 90 },
+        { name: 'Git', icon: <FaGitAlt />, level: 85 },
       ],
     },
   ];

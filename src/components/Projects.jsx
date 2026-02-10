@@ -26,22 +26,29 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "Peoples' Health care",
+      title: "Peoples' Health care - Intelligent Medical Center Management System",
       description: 'Coming Soon...',
       image: "Peoples' Health Care.jpg",
-      technologies: ['Python', 'Google Colab Notebook','Jupyter','scikit-learn','CNN','MongoDB','Express.js','React','Node.js'],
+      technologies: ['Python', 'Google Colab Notebook','Jupyter','scikit-learn','CNN','NLP','MongoDB','Express.js','React','Node.js'],
       github: 'https://github.com/Hasanga910/People-s-Health-Care.git',
-      live: 'https://demo-ecommerce.com',
       featured: true,
       upcoming: true,
+    },
+    {
+      title: "Hasanga | Hyper AI",
+      description: 'Personal developer portfolio designed to present academic projects, technical skills, and experience. Built with a modern responsive UI and deployed on Vercel with real-time email contact functionality.',
+      image: "portfolio.png",
+      technologies: ['React', 'Vite',' Tailwind CSS', 'JavaScript', 'EmailJS', 'Vercel'],
+      github: 'https://github.com/Hasanga910/portfolio.git',
+      featured: true,
+      upcoming: false,
     },
     {
       title: 'Flightify AI/ML - Airline Passenger Satisfaction Prediction',
       description: 'AI/ML system that predicts passenger satisfaction based on airline service factors, helping airlines improve service quality and enabling passengers to choose higher-rated airlines.',
       image: 'Flightify.jpg',
-      technologies: ['Python', 'Google Colab Notebook','Jupyter','scikit-learn'],
+      technologies: ['Python', 'Google Colab Notebook','Jupyter','Scikit-learn','Logistic Regression','Random Forest','Decision Tree','SVM','KNN','MLP'],
       github: 'https://github.com/Hasanga910/Flightify.git',
-      live: 'https://demo-ecommerce.com',
       featured: true,
       upcoming: false,
     },
@@ -51,17 +58,15 @@ const Projects = () => {
       image: 'Hireza.webp',
       technologies: ['Java', 'MS SQL Server', 'Docker', 'JSP','Servlets', 'Apache Tomcat', 'MVC', 'HTML/CSS'],
       github: 'https://github.com/Hasanga910/HireZa.git',
-      live: 'https://demo-taskmanager.com',
       featured: true,
       upcoming: false,
     },
     {
-      title: 'ApolloCabs Taxi Booking Platform',
+      title: 'ApolloCabs - Taxi Booking Platform',
       description: 'Comprehensive online taxi booking platform built with Java OOP principles, featuring multi-portal system for passengers, drivers, and admins with real-time booking capabilities.',
       image: 'Apollocabs.jpg',
       technologies: ['Java 17', 'JSP', 'Servlets','Apache Tomcat','MVC','HTML/CSS'],
       github: 'https://github.com/Hasanga910/ApolloCabs.git',
-      live: 'https://demo-weather.com',
       featured: false,
       upcoming: false,
     },
@@ -146,15 +151,6 @@ const Projects = () => {
                   >
                     <FaGithub className="text-base sm:text-lg" />
                     <span className="text-xs sm:text-sm">Code</span>
-                  </a>
-                  <a
-                    href={project.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-light-gray dark:text-light-gray hover:text-white dark:hover:text-white transition-colors"
-                  >
-                    <FaExternalLinkAlt className="text-sm" />
-                    <span className="text-xs sm:text-sm">Live Demo</span>
                   </a>
                 </div>
               </div>
