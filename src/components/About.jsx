@@ -208,10 +208,10 @@ const About = () => {
               </h4>
               <div className="flex flex-wrap gap-2">
                 <span className="px-3 py-1.5 bg-dark-bg dark:bg-dark-bg border border-dark-border dark:border-dark-border rounded-full text-xs sm:text-sm text-light-gray dark:text-light-gray">
-                  Open Source
+                  Mindfulness
                 </span>
                 <span className="px-3 py-1.5 bg-dark-bg dark:bg-dark-bg border border-dark-border dark:border-dark-border rounded-full text-xs sm:text-sm text-light-gray dark:text-light-gray">
-                  Tech Blogging
+                  Tech Curiosity
                 </span>
                 <span className="px-3 py-1.5 bg-dark-bg dark:bg-dark-bg border border-dark-border dark:border-dark-border rounded-full text-xs sm:text-sm text-light-gray dark:text-light-gray">
                   Photography
