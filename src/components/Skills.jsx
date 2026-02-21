@@ -61,8 +61,8 @@ const Skills = () => {
     {
       title: 'DevOps & Tools',
       skills: [
-        { name: 'Docker', icon: <FaDocker />, level: 86 },
-        { name: 'AWS', icon: <FaAws />, level: 84 },
+        { name: 'Docker', icon: <FaDocker />, level: 50 },
+        { name: 'AWS', icon: <FaAws />, level: 55 },
         { name: 'Git', icon: <FaGitAlt />, level: 85 },
       ],
     },
