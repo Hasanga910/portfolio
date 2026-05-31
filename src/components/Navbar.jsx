@@ -11,7 +11,7 @@ const Navbar = () => {
     setIsScrolled(window.scrollY > 50);
 
     // Update active section based on scroll position
-    const sections = ['home', 'about', 'skills', 'projects', 'contact'];
+    const sections = ['home', 'about', 'experience', 'skills', 'projects', 'contact'];
     
     // Check if we're near the bottom of the page (for last section)
     const isNearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
@@ -55,6 +55,7 @@ const Navbar = () => {
   const navLinks = [
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
+    { id: 'experience', label: 'Experience' },
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },

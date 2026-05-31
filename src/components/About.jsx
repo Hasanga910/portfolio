@@ -97,7 +97,7 @@ const About = () => {
                   <span className="text-light-gray dark:text-light-gray mt-1 text-lg">🟢</span>
                   <div>
                     <p className="text-xs sm:text-sm text-dark-gray dark:text-dark-gray">Current status</p>
-                    <p className="text-sm sm:text-base text-light-gray dark:text-light-gray">2 Year 2 Semester</p>
+                    <p className="text-sm sm:text-base text-light-gray dark:text-light-gray">2 Year 2 Semester(Completed)</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
