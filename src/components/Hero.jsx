@@ -34,7 +34,7 @@ const Hero = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-green opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-green"></span>
               </span>
-              <span className="text-light-gray dark:text-light-gray light:text-light-text-secondary">Currently Interning at Aecendir Labs</span>
+              <span className="text-light-gray dark:text-light-gray light:text-light-text-secondary">AI Engineer Intern @ Aecendir Labs</span>
             </div>
 
             {/* Main Title */}
@@ -114,15 +114,6 @@ const Hero = () => {
                     e.target.src = 'https://ui-avatars.com/api/?name=Hasanga&size=400&background=111111&color=ffffff';
                   }}
                 />
-              </div>
-
-              {/* Available Badge on Image */}
-              <div className="absolute bottom-4 sm:bottom-8 right-4 sm:right-8 bg-dark-bg dark:bg-dark-bg light:bg-white border border-dark-border dark:border-dark-border light:border-light-border rounded-full px-3 sm:px-4 py-1.5 sm:py-2 flex items-center gap-2">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-green opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-green"></span>
-                </span>
-                <span className="text-xs sm:text-sm text-white dark:text-white light:text-light-text">Currently Interning at Aecendir Labs</span>
               </div>
             </div>
           </div>
