@@ -1,7 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
-import { FaUsers } from 'react-icons/fa';
+import { FaUsers, FaBriefcase } from 'react-icons/fa';
 
 const experiences = [
+  {
+    title: 'AI Engineer Intern',
+    company: 'Aecendir Labs',
+    period: 'Jul 2026 – Present',
+    location: 'Hybrid',
+    description: 'Working as an AI Engineer Intern at Aecendir Labs, contributing to the design and development of AI-driven solutions. Involved in building and fine-tuning machine learning models, developing data pipelines, and collaborating with the engineering team to integrate AI capabilities into production systems.',
+    tags: ['AI/ML', 'Python', 'Machine Learning', 'Data Pipelines'],
+    icon: <FaBriefcase />,
+  },
   {
     title: 'President',
     company: 'Student Interactive Society (SIS)',
@@ -9,6 +18,7 @@ const experiences = [
     location: 'SLITT Matara Center',
     description: 'Leading the Student Interactive Society to foster a collaborative tech community among students. Organizing workshops, hackathons, and networking events while mentoring members and driving initiatives that bridge academic learning with real-world industry skills.',
     tags: ['Leadership', 'Event Management', 'Community Building', 'Mentoring'],
+    icon: <FaUsers />,
   },
 ];
 
@@ -22,9 +32,8 @@ const ExperienceCard = ({ item, index, isVisible, isLast }) => (
     {/* Timeline column */}
     <div className="flex flex-col items-center">
       <div className="w-10 h-10 rounded-lg bg-dark-surface border border-dark-border flex items-center justify-center flex-shrink-0 text-light-gray text-base">
-        <FaUsers />
+        {item.icon}
       </div>
-      {!isLast && <div className="w-px flex-1 mt-3 bg-dark-border" />}
     </div>
 
     {/* Content */}

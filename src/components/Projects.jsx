@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { FaGithub, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { FaGithub, FaChevronLeft, FaChevronRight, FaArrowsAltH } from 'react-icons/fa';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -119,11 +119,8 @@ const Projects = () => {
     };
 
     // ── Trackpad / mouse wheel (horizontal deltaX) ──
-    let wheelAccum = 0;
-    let wheelResetId = null;
-
     const onMouseEnter = () => { isCarouselHoveredRef.current = true; };
-    const onMouseLeave = () => { isCarouselHoveredRef.current = false; wheelAccum = 0; setCarouselDragX(0); };
+    const onMouseLeave = () => { isCarouselHoveredRef.current = false; };
 
     const onWheel = (e) => {
       // when cursor is not over carousel, let everything pass to the parent
@@ -140,25 +137,16 @@ const Projects = () => {
 
       if (isNavigatingRef.current) return;
 
-      wheelAccum += e.deltaX;
-      // live drag preview: positive deltaX (swipe left) → cards shift left
-      setCarouselDragX(-Math.sign(wheelAccum) * Math.min(Math.abs(wheelAccum) * 0.38, 90));
+      // Fixed cooldown from the moment of firing (not from the last event)
+      // absorbs a trackpad's momentum/inertia tail after the same physical
+      // swipe, without trying to guess when the gesture "really" ended.
+      const now = Date.now();
+      if (now - lastNavTimeRef.current < 800) return;
+      lastNavTimeRef.current = now;
 
-      if (wheelResetId) clearTimeout(wheelResetId);
-      wheelResetId = setTimeout(() => {
-        setCarouselDragX(0);
-        wheelAccum = 0;
-      }, 250);
-
-      if (Math.abs(wheelAccum) >= 90) {
-        const dir = wheelAccum > 0 ? 1 : -1;
-        wheelAccum = 0;
-        clearTimeout(wheelResetId);
-        setCarouselDragX(0);
-        lastNavTimeRef.current = Date.now();
-        if (dir > 0) next();
-        else prev();
-      }
+      // One swipe = exactly one project, immediately, regardless of distance.
+      if (e.deltaX > 0) next();
+      else prev();
     };
 
     el.addEventListener('mouseenter', onMouseEnter);
@@ -175,7 +163,6 @@ const Projects = () => {
       el.removeEventListener('touchmove',  onTouchMove);
       el.removeEventListener('touchend',   onTouchEnd);
       el.removeEventListener('wheel',      onWheel);
-      if (wheelResetId) clearTimeout(wheelResetId);
     };
   }, [activeIndex, isTransitioning]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -278,6 +265,12 @@ const Projects = () => {
                         }`} />
                     ))}
                   </div>
+
+                  {/* mobile swipe hint */}
+                  <div className="flex lg:hidden items-center gap-1.5 mt-3 text-white/40 text-[10px] uppercase tracking-widest animate-pulse">
+                    <FaArrowsAltH className="text-xs" />
+                    <span>Swipe</span>
+                  </div>
                 </div>
               </>
             ) : (
@@ -337,6 +330,12 @@ const Projects = () => {
                           i === activeIndex ? 'w-5 h-1.5 bg-white' : 'w-1.5 h-1.5 bg-white/30'
                         }`} />
                     ))}
+                  </div>
+
+                  {/* mobile swipe hint */}
+                  <div className="flex lg:hidden items-center gap-1.5 mt-3 text-white/40 text-[10px] uppercase tracking-widest animate-pulse">
+                    <FaArrowsAltH className="text-xs" />
+                    <span>Swipe</span>
                   </div>
                 </div>
               </>
@@ -475,6 +474,12 @@ const Projects = () => {
               >
                 <FaChevronRight className="text-[10px]" />
               </button>
+            </div>
+
+            {/* Swipe hint */}
+            <div className="flex justify-center items-center gap-1.5 text-white/40 text-[10px] uppercase tracking-widest animate-pulse">
+              <FaArrowsAltH className="text-xs" />
+              <span>Swipe</span>
             </div>
 
             {/* GitHub link */}

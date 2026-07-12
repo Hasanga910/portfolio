@@ -34,7 +34,7 @@ const Hero = () => {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-green opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-green"></span>
               </span>
-              <span className="text-light-gray dark:text-light-gray light:text-light-text-secondary">Available for Work</span>
+              <span className="text-light-gray dark:text-light-gray light:text-light-text-secondary">Currently Interning at Aecendir Labs</span>
             </div>
 
             {/* Main Title */}
@@ -122,7 +122,7 @@ const Hero = () => {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-green opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-green"></span>
                 </span>
-                <span className="text-xs sm:text-sm text-white dark:text-white light:text-light-text">Available for hire</span>
+                <span className="text-xs sm:text-sm text-white dark:text-white light:text-light-text">Currently Interning at Aecendir Labs</span>
               </div>
             </div>
           </div>

@@ -216,10 +216,10 @@ const Contact = () => {
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-green opacity-75"></span>
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-green"></span>
                     </span>
-                    <span className="text-sm sm:text-base text-light-gray dark:text-light-gray font-medium">Available for Work</span>
+                    <span className="text-sm sm:text-base text-light-gray dark:text-light-gray font-medium">Currently Interning at Aecendir Labs</span>
                   </div>
                   <p className="text-xs sm:text-sm text-dark-gray dark:text-dark-gray">
-                    Open to internship and full-time opportunities
+                    Building AI-driven solutions as part of the Aecendir Labs team
                   </p>
                 </div>
               </div>
